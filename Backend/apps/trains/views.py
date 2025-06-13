@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from .models import TrainBookingDetails
+from .serializers import TrainBookingDetailsSerializer
 
-# Create your views here.
+class TrainBookingDetailsViewSet(viewsets.ModelViewSet):
+    queryset = TrainBookingDetails.objects.all()
+    serializer_class = TrainBookingDetailsSerializer

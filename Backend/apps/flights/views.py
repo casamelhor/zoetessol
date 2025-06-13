@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from .models import FlightBookingDetails
+from .serializers import FlightBookingDetailsSerializer
 
-# Create your views here.
+class FlightBookingDetailsViewSet(viewsets.ModelViewSet):
+    queryset = FlightBookingDetails.objects.all()
+    serializer_class = FlightBookingDetailsSerializer
